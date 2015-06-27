@@ -5,8 +5,8 @@ class People
 {
 public:
 	People();
-	~People();
-	void displayInfo();
+	virtual ~People();
+	void displayInfo() const;
 	const char* getName() const;
 	void setName(const char* name);
 	Date getBirthday() const;
@@ -17,4 +17,4 @@ protected:
 	char* mName;
 	Date mBirthday;
 	int mIDCode;
-}
+};

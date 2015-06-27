@@ -10,7 +10,7 @@ People::~People()
 	delete []mName;
 }
 
-void People::displayInfo()
+void People::displayInfo() const
 {
 	printf("Name: %s\n", getName());
 	printf("ID code: %d\n", getIDCode());
