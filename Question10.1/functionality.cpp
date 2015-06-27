@@ -1,5 +1,5 @@
 #include "functionality.h"
-
+#include <cstring>
 Date verifyDate(int day, int month, int year)
 {
 	int validDate;
@@ -55,4 +55,22 @@ Date verifyDate(int day, int month, int year)
 	}
 
 	return validDate;
+}
+
+// Check Subject in enum and assign to result parameter in string
+void retrieveSubjectInString(char *result, Subject sub)
+{
+	switch (sub)
+	{
+		case MATHS:
+			strcpy(result, "MATHS");
+			break;
+		case PHYS:
+			strcpy(result, "PHYS");
+			break;
+		case ENGLISH:
+			strcpy(result, "ENGLISH");
+			break;
+		default: strcpy(result, "UNKNOW");
+	}
 }

@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdio>
 #include "Staff.h"
 
 Staff::Staff():People()

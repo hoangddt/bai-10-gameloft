@@ -1,3 +1,4 @@
+#include <cstdio>
 #include "People.h"
 
 People::People()
