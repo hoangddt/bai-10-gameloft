@@ -6,7 +6,7 @@ class People
 public:
 	People();
 	virtual ~People();
-	void displayInfo() const;
+	virtual void displayInfo() const;
 	const char* getName() const;
 	void setName(const char* name);
 	Date getBirthday() const;
