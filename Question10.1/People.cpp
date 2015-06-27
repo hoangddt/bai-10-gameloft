@@ -1,5 +1,8 @@
 #include <cstdio>
+#include <cstring>
 #include "People.h"
+#include "functionality.h"
+
 
 People::People()
 {
@@ -26,7 +29,7 @@ const char* People::getName() const
 
 void People::setName(const char* name)
 {
-	mName = name;
+	strcpy(mName, name);
 }
 
 Date People::getBirthday() const

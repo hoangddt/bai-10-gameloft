@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdio>
 #include "Staff.h"
+#include "functionality.h"
 
 Staff::Staff():People()
 {
@@ -14,8 +15,8 @@ void Staff::displayInfo() const
 {
 	People::displayInfo();
 	printf("DepartmentID: %d - JoinedDay: %d/%d/%d - Level: %d\n",
-		getDepartmentID,
-		getJoinedDay,
+		getDepartmentID(),
+		getJoinedDay(),
 		mJoinedDay.day,
 		mJoinedDay.month,
 		mJoinedDay.year,

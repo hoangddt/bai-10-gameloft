@@ -55,7 +55,7 @@ void Student::setNumberOfProject(int n)
 }
 const float* Student::getSoreOfEachProject() const
 {
-	return *mSrores;
+	return mScores;
 }
 void Student::setSoreOfEachProject(int position, float score)
 {

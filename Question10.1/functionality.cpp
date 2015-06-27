@@ -2,7 +2,7 @@
 #include <cstring>
 Date verifyDate(int day, int month, int year)
 {
-	int validDate;
+	Date validDate;
 	if (month > 0 && month < 13)
 	{
 		validDate.month = month;

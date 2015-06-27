@@ -1,6 +1,6 @@
 #include <cstdio>
 #include "Teacher.h"
-
+#include "functionality.h"
 
 Teacher::Teacher()
 :People(),
