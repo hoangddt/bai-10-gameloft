@@ -26,6 +26,7 @@ Staff::Staff(const char *name):People(name)
 
 Staff::~Staff()
 {
+	printf("Destroying Staff: %s\n", getName());
 }
 
 void Staff::displayInfo() const

@@ -23,6 +23,7 @@ Teacher::Teacher(const Teacher &otherTeacher)
 }
 Teacher::~Teacher()
 {
+	printf("Destroying Teacher: %s\n", getName());
 }
 
 void Teacher::displayInfo() const

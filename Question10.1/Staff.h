@@ -7,7 +7,7 @@ public:
 	Staff(const char *name);
 	// Staff(Staff *otherStaff);
 	Staff(const Staff &otherStaff);
-	~Staff();
+	virtual ~Staff();
 	void displayInfo() const;
 	int getDepartmentID() const;
 	void setDepartmentID(int depID);

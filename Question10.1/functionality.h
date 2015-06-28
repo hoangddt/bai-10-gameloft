@@ -34,3 +34,6 @@ void printHighScoreStudent(Node* node, int startFrom, float score);
 
 // Create People instance and use copy constructor
 void testPeopleCopyConstructor();
+
+// CLone current list, return list is created
+Node* cloneList(Node* list);

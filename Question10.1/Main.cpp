@@ -75,6 +75,9 @@ int main(int argc, char const *argv[])
 
 	testPeopleCopyConstructor();
 
+	// Clone a list
+	Node *otherList = cloneList(list);
+
 /* this code snippet fail, look again later
 	// Add 5 staff to list
 	addInstanceToNode(list, staffs, numberOfInstance);

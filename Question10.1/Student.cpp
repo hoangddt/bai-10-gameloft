@@ -32,6 +32,7 @@ Student::Student(const char *name)
 }
 Student::~Student()
 {
+	printf("Destroying Student: %s\n", getName());
 	delete []mScores;
 }
 void Student::displayInfo() const
