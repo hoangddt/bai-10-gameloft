@@ -73,7 +73,7 @@ int main(int argc, char const *argv[])
 	int startFrom = 10;
 	printHighScoreStudent(list, startFrom, 5.0);
 
-
+	testPeopleCopyConstructor();
 
 /* this code snippet fail, look again later
 	// Add 5 staff to list

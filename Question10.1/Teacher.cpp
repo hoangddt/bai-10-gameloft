@@ -5,12 +5,22 @@
 
 int Teacher::count = 0;
 Teacher::Teacher(const char *name)
-:People(name),
-Staff(name)
+:Staff(name)
 {
 	count++;
 }
+Teacher::Teacher(const Teacher &otherTeacher)
+:Staff(otherTeacher.getName())
+{
+	
+	setClass(otherTeacher.getClass());
+	setSubject(otherTeacher.getSubject());
+	setSecondSubject(otherTeacher.getSecondSubject());
 
+	Date birthday = otherTeacher.getBirthday();
+	setBirthday(birthday.day, birthday.month, birthday.year);
+	count++;
+}
 Teacher::~Teacher()
 {
 }

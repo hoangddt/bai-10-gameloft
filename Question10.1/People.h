@@ -5,6 +5,8 @@ class People
 {
 public:
 	People(const char *name);
+	// People(People *otherPeoplePointer);
+	People(const People &otherPeople);
 	virtual ~People();
 	virtual void displayInfo() const;
 	const char* getName() const;

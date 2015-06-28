@@ -5,6 +5,20 @@
 
 
 int Staff::count = 0;
+Staff::Staff(const Staff &otherStaff)
+:People(otherStaff.getName())
+{
+	
+	setDepartmentID(otherStaff.getDepartmentID());
+	setLevel(otherStaff.getLevel());
+
+	Date JoinedDay = otherStaff.getJoinedDay();
+	setJoinedDay(JoinedDay.day, JoinedDay.month, JoinedDay.year);
+
+	Date birthday = otherStaff.getBirthday();
+	setBirthday(birthday.day, birthday.month, birthday.year);
+	count++;
+}
 Staff::Staff(const char *name):People(name)
 {
 	count++;

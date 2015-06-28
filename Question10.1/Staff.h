@@ -5,6 +5,8 @@ class Staff: public People
 {
 public:
 	Staff(const char *name);
+	// Staff(Staff *otherStaff);
+	Staff(const Staff &otherStaff);
 	~Staff();
 	void displayInfo() const;
 	int getDepartmentID() const;

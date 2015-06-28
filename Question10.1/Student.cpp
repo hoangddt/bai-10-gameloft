@@ -3,6 +3,24 @@
 
 int Student::count = 0;
 
+Student::Student(const Student &otherStudent)
+:People(otherStudent.getName())
+{
+	setGrade(otherStudent.getGrade());
+	int numOfProject = otherStudent.getNumberOfProject();
+	setNumberOfProject(numOfProject);
+	const float *scores = otherStudent.getSoreOfEachProject();
+	for (int i = 0; i < numOfProject; ++i)
+	{
+		setSoreOfEachProject(i, scores[i]);
+	}
+	
+
+	Date birthday = otherStudent.getBirthday();
+	setBirthday(birthday.day, birthday.month, birthday.year);
+	count++;
+}
+
 Student::Student(const char *name)
 :People(name)
 {

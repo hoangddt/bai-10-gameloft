@@ -5,6 +5,8 @@ class Student: public People
 {
 public:
 	Student(const char *name);
+	// Student(Student *otherStudent);
+	Student(const Student &otherStudent);
 	~Student();
 	void displayInfo() const;
 	int getGrade() const;

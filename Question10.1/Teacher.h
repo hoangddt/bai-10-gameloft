@@ -6,10 +6,12 @@
 #include "Subject.h"
 
 
-class Teacher: public People, public Staff
+class Teacher: public Staff
 {
 public:
 	Teacher(const char *name);
+	// Teacher(Teacher *otherTeacher);
+	Teacher(const Teacher &otherTeacher);
 	~Teacher();
 	void displayInfo() const;
 	int getClass() const;

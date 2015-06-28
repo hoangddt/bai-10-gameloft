@@ -5,6 +5,24 @@
 
 int People::count = 0;
 
+People::People(const People &otherPeople)
+{
+	mName = new char[50];
+	strcpy(mName, otherPeople.getName());
+	Date birthday = otherPeople.getBirthday();
+
+	setBirthday(birthday.day, birthday.month, birthday.year);
+	setIDCode(otherPeople.getIDCode());
+
+	count++;
+}
+
+/*People::People(People *otherPeoplePointer)
+{
+	// call to People::People(const People &otherPeople)
+	People(*otherPeoplePointer);
+}*/
+
 People::People(const char *name)
 {
 	mName = new char[50];

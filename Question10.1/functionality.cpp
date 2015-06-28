@@ -136,3 +136,17 @@ void printHighScoreStudent(Node* node, int startFrom, float score)
 		count++;
 	}
 }
+
+// Create People instance and use copy constructor
+void testPeopleCopyConstructor()
+{
+	People A("A");
+	A.displayInfo();
+	People B(A);
+	A.displayInfo();
+
+	People *C = new People("Hoang");
+	C->displayInfo();
+	People D(*C);
+	D.displayInfo();
+}

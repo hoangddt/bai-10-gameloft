@@ -31,3 +31,6 @@ void initScoreForStudent(	Student *student,
 // print student have score > score
 // in a node from startFrom position
 void printHighScoreStudent(Node* node, int startFrom, float score);
+
+// Create People instance and use copy constructor
+void testPeopleCopyConstructor();
