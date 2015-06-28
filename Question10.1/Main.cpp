@@ -32,9 +32,24 @@ int main(int argc, char const *argv[])
 							new Student("Student 5")
 					};
 
+	initScoreForStudent(students[0], 3, 7.5, 7.5, 5.6);
+	initScoreForStudent(students[1], 4, 8.5, 7.5, 7.6, 5.6);
+	initScoreForStudent(students[2], 3, 5.5, 1.5, 5.6);
+	initScoreForStudent(students[3], 3, 7.5, 8.5, 5.6);
+	initScoreForStudent(students[4], 3, 7.5, 9.5, 5.6);
+	
+	// Display Info
+	printf("Display Info of All Student:\n");
+	for (int i = 0; i < numberOfInstance; ++i)
+	{
+		students[i]->displayInfo();
+		printf("---------***--------\n\n");
+	}
+
 	// Create a list and add to list
 	Node *list = NULL;
-	
+
+
 	// Add 5 staff to list
 	for (int i = 0; i < numberOfInstance; ++i)
 	{
@@ -53,7 +68,21 @@ int main(int argc, char const *argv[])
 		Node::add(list, students[i]);
 	}
 
+	// print student have score > 5.0
+	printf("--------Print Info Of Student have score > 5.0------\n");
+	int startFrom = 10;
+	printHighScoreStudent(list, startFrom, 5.0);
 
+
+
+/* this code snippet fail, look again later
+	// Add 5 staff to list
+	addInstanceToNode(list, staffs, numberOfInstance);
+	// Add 5 teacher to list
+	addInstanceToNode(list, teachers, numberOfInstance);
+	// Add 5 student to list
+	addInstanceToNode(list, students, numberOfInstance);
 	
+*/
 	return 0;
 }

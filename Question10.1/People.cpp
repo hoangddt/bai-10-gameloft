@@ -9,6 +9,9 @@ People::People(const char *name)
 {
 	mName = new char[50];
 	strcpy(mName, name);
+	// default birthday
+	setBirthday(1, 1, 2000);
+	setIDCode(count);
 	count++;
 }
 

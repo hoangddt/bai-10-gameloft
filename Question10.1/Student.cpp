@@ -8,6 +8,7 @@ Student::Student(const char *name)
 {
 	// init Scores with 1 (project)
 	// will change this in method setNumberOfProject
+	mGrade = 10;
 	mScores = new float[1];
 	count++;
 }
@@ -22,7 +23,7 @@ void Student::displayInfo() const
 	int numProject = getNumberOfProject();
 	const float* scores = getSoreOfEachProject();
 	
-	printf("Grade: %d, Avegage Score: %0.2f\n");
+	printf("Grade: %d, Avegage Score: %0.2f\n", getGrade(), getAverageScore());
 	printf("Number of Project: %d\n", numProject);
 	
 	printf("Score of Each project: \n");
@@ -68,7 +69,7 @@ float Student::getAverageScore() const
 {
 	float avegareScore = 0,
 		  sum = 0;
-	int numProject;
+	int numProject = getNumberOfProject();
 	for (int i = 0; i < numProject; ++i)
 	{
 		sum += mScores[i];
