@@ -11,6 +11,7 @@
 *.userprefs
 
 # Build results
+Question10.1/Debug/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
