@@ -10,6 +10,7 @@
 int main(int argc, char const *argv[])
 {
 	// Create 5 staff, 5 teacher, and 5 student
+	int numberOfInstance = 5;
 	Staff *staffs[] = { new Staff("Staff 1"),
 						new Staff("Staff 2"),
 						new Staff("Staff 3"),
@@ -33,6 +34,26 @@ int main(int argc, char const *argv[])
 
 	// Create a list and add to list
 	Node *list = NULL;
+	
+	// Add 5 staff to list
+	for (int i = 0; i < numberOfInstance; ++i)
+	{
+		Node::add(list, staffs[i]);
+	}
+
+	// Add 5 teacher to list
+	for (int i = 0; i < numberOfInstance; ++i)
+	{
+		Node::add(list, teachers[i]);
+	}
+
+	// Add 5 student to list
+	for (int i = 0; i < numberOfInstance; ++i)
+	{
+		Node::add(list, students[i]);
+	}
+
+
 	
 	return 0;
 }
