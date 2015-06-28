@@ -2,10 +2,13 @@
 #include "Teacher.h"
 #include "functionality.h"
 
-Teacher::Teacher()
-:People(),
-Staff()
+
+int Teacher::count = 0;
+Teacher::Teacher(const char *name)
+:People(name),
+Staff(name)
 {
+	count++;
 }
 
 Teacher::~Teacher()

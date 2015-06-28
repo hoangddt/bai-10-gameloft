@@ -3,8 +3,11 @@
 #include "Staff.h"
 #include "functionality.h"
 
-Staff::Staff():People()
+
+int Staff::count = 0;
+Staff::Staff(const char *name):People(name)
 {
+	count++;
 }
 
 Staff::~Staff()

@@ -4,7 +4,7 @@
 class Student: public People
 {
 public:
-	Student();
+	Student(const char *name);
 	~Student();
 	void displayInfo() const;
 	int getGrade() const;
@@ -14,6 +14,8 @@ public:
 	const float* getSoreOfEachProject() const;
 	void setSoreOfEachProject(int position, float score);
 	float getAverageScore() const;
+
+	static int count;
 protected:
 	int mGrade;
 	int mNumberOfProject;

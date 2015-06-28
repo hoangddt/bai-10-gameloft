@@ -9,7 +9,7 @@
 class Teacher: public People, public Staff
 {
 public:
-	Teacher();
+	Teacher(const char *name);
 	~Teacher();
 	void displayInfo() const;
 	int getClass() const;
@@ -18,6 +18,8 @@ public:
 	void setSubject(Subject subject);
 	Subject getSecondSubject() const;
 	void setSecondSubject(Subject subject);
+
+	static int count;
 private:
 	int mClass;
 	Subject mSubject;

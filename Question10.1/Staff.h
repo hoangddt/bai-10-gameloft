@@ -4,7 +4,7 @@
 class Staff: public People
 {
 public:
-	Staff();
+	Staff(const char *name);
 	~Staff();
 	void displayInfo() const;
 	int getDepartmentID() const;
@@ -13,6 +13,8 @@ public:
 	void setJoinedDay(int day, int month, int year);
 	int getLevel() const;
 	void setLevel(int level);
+
+	static int count;
 private:
 	int mDepartmentID;
 	Date mJoinedDay;

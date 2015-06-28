@@ -4,7 +4,7 @@
 class People
 {
 public:
-	People();
+	People(const char *name);
 	virtual ~People();
 	virtual void displayInfo() const;
 	const char* getName() const;
@@ -13,6 +13,8 @@ public:
 	void setBirthday(int day, int month, int year);
 	int getIDCode() const;
 	void setIDCode(int id);
+
+	static int count;
 protected:
 	char* mName;
 	Date mBirthday;

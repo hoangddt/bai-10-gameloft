@@ -166,6 +166,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Main.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Node.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\People.cpp"
 				>
 			</File>
@@ -193,6 +201,10 @@
 			</File>
 			<File
 				RelativePath=".\functionality.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Node.h"
 				>
 			</File>
 			<File

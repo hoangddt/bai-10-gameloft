@@ -3,10 +3,13 @@
 #include "People.h"
 #include "functionality.h"
 
+int People::count = 0;
 
-People::People()
+People::People(const char *name)
 {
 	mName = new char[50];
+	strcpy(mName, name);
+	count++;
 }
 
 People::~People()

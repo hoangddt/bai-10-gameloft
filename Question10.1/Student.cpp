@@ -1,12 +1,15 @@
 #include <cstdio>
 #include "Student.h"
 
-Student::Student()
-:People()
+int Student::count = 0;
+
+Student::Student(const char *name)
+:People(name)
 {
 	// init Scores with 1 (project)
 	// will change this in method setNumberOfProject
 	mScores = new float[1];
+	count++;
 }
 Student::~Student()
 {
