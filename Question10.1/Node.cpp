@@ -31,3 +31,31 @@ void Node::add(Node* &node, People *element)
 	}
 	
 }
+
+// remove last element
+void remove(Node* &node)
+{
+	if (node == NULL)
+	{
+		return;
+	}
+
+	Node *pivot = node;
+	Node *last = NULL;
+	// go to last element
+	while (pivot != NULL)
+	{
+		last = pivot;
+		// move forward
+		pivot = pivot->next;
+	}
+
+	// free last element
+	delete last->data;
+	pivot = node;
+	while (pivot != last)
+	{
+		pivot = pivot->next;
+	}
+	pivot->next = NULL;
+}
