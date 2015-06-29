@@ -9,7 +9,10 @@
 #include "Student.h"
 #include <cstdarg>
 #include <cstdio>
-
+#include <cstring>
+#include <iostream>
+#include <fstream>
+using namespace std;
 // Return validDate that is verified
 Date verifyDate(int day, int month, int year);
 
@@ -39,3 +42,8 @@ void testPeopleCopyConstructor();
 
 // CLone current list, return list is created
 Node* cloneList(Node* list);
+
+// Write a list of student to file
+// provide list is contain linked-list of data
+// PATH is the path we want to output eg: "D:\\out.txt"
+void writeListToFile(Node *list, const char *PATH);

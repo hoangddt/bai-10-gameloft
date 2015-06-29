@@ -1,5 +1,5 @@
 #include "functionality.h"
-#include <cstring>
+
 Date verifyDate(int day, int month, int year)
 {
 	Date validDate;
@@ -196,4 +196,50 @@ Node* cloneList(Node* list)
 	}
 
 	return newlist;
+}
+
+// Write a list to file
+// provide list is contain linked-list of data
+// PATH is the path we want to output eg: "D:\\out.txt"
+void writeListToFile(Node *list, const char *PATH)
+{
+	ofstream myfile(PATH);
+	if (myfile.is_open())
+	{
+		
+		Node *pivot = list;
+		while (pivot != NULL)
+		{
+			Student *isStudent = dynamic_cast<Student*> (pivot->data);
+			if (isStudent)
+			{
+				// performe write action
+				Student *student = isStudent;
+				myfile<<student->getName()<<endl;
+				myfile<<student->getIDCode()<<endl;
+
+				Date bd = student->getBirthday();
+				myfile<<bd.day<<" "<<bd.month<<" "<<bd.year<<endl;
+				myfile<<student->getGrade()<<endl;
+
+				int numberOfProj = student->getNumberOfProject();
+				myfile<<numberOfProj<<endl;
+				
+				const float* scores = student->getSoreOfEachProject();
+				for (int i = 0; i < numberOfProj; ++i)
+				{
+					myfile<<scores[i]<<" ";
+				}
+				myfile<<endl;
+			}
+
+			// move forward in linked-list
+			pivot = pivot->next;
+		}
+		myfile.close();
+	}
+	else
+	{
+		printf("Can not write to file: %s\n", PATH);
+	}
 }
