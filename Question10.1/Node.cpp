@@ -59,5 +59,7 @@ void Node::remove(Node* &node)
 		end = pivot;
 		pivot = pivot->next;
 	}
+
+	// remove last element
 	end->next = NULL;
 }

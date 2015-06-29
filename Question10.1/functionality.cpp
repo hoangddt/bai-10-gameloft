@@ -171,6 +171,11 @@ Node* cloneList(Node* list)
 		
 		if (isTeacher)
 		{
+			// Because Teacher dirived from Staff, dynamic_cast will return true
+			// for both isStaff and isTeacher if it is Teacher
+			// So we disable isStaff to avoid copy by Staff constructor
+			isStaff = NULL;
+			// only use Teacher constructor
 			Teacher *teacher = new Teacher(*(isTeacher));
 			newElement = teacher;
 		}

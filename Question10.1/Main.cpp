@@ -72,7 +72,7 @@ int main(int argc, char const *argv[])
 		Node::add(list, students[i]);
 	}
 
-	for (int i = 0; i < 10; ++i)
+	for (int i = 0; i < 13; ++i)
 	{
 		Node::remove(list);
 	}
