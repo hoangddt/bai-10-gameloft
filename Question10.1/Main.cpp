@@ -11,6 +11,10 @@ int main(int argc, char const *argv[])
 {
 	// Create 5 staff, 5 teacher, and 5 student
 	int numberOfInstance = 5;
+
+	People *std = new Student("Student to destroy");
+	delete std;
+
 	Staff *staffs[] = { new Staff("Staff 1"),
 						new Staff("Staff 2"),
 						new Staff("Staff 3"),
@@ -42,8 +46,8 @@ int main(int argc, char const *argv[])
 	printf("Display Info of All Student:\n");
 	for (int i = 0; i < numberOfInstance; ++i)
 	{
-		students[i]->displayInfo();
-		printf("---------***--------\n\n");
+		/*students[i]->displayInfo();
+		printf("---------***--------\n\n");*/
 	}
 
 	// Create a list and add to list
@@ -68,16 +72,25 @@ int main(int argc, char const *argv[])
 		Node::add(list, students[i]);
 	}
 
+	for (int i = 0; i < 10; ++i)
+	{
+		Node::remove(list);
+	}
+	
+	list;
+	
 	// print student have score > 5.0
 	printf("--------Print Info Of Student have score > 5.0------\n");
 	int startFrom = 10;
 	printHighScoreStudent(list, startFrom, 5.0);
 
+	printf("Calling copy constructor\n");
 	testPeopleCopyConstructor();
 
 	// Clone a list
+	printf("Calling cloneLIST\n");
 	Node *otherList = cloneList(list);
-
+	otherList;
 /* this code snippet fail, look again later
 	// Add 5 staff to list
 	addInstanceToNode(list, staffs, numberOfInstance);

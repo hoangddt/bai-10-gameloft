@@ -33,7 +33,7 @@ void Node::add(Node* &node, People *element)
 }
 
 // remove last element
-void remove(Node* &node)
+void Node::remove(Node* &node)
 {
 	if (node == NULL)
 	{
@@ -53,9 +53,11 @@ void remove(Node* &node)
 	// free last element
 	delete last->data;
 	pivot = node;
+	Node *end = NULL;
 	while (pivot != last)
 	{
+		end = pivot;
 		pivot = pivot->next;
 	}
-	pivot->next = NULL;
+	end->next = NULL;
 }

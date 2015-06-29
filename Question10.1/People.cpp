@@ -36,7 +36,8 @@ People::People(const char *name)
 People::~People()
 {
 	printf("Destroying People: %s\n", getName());
-	delete []mName;
+	delete mName;
+	printf("Destroy Complete\n");
 }
 
 void People::displayInfo() const

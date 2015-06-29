@@ -149,6 +149,7 @@ void testPeopleCopyConstructor()
 	C->displayInfo();
 	People D(*C);
 	D.displayInfo();
+	delete C;
 }
 
 // CLone current list, return list is created
@@ -159,7 +160,7 @@ Node* cloneList(Node* list)
 
 	Node *pivot = list;
 	Node *newlist = NULL;
-
+	printf("\nExecuting cloneList....\n");
 	while (pivot != NULL)
 	{
 		Teacher *isTeacher = dynamic_cast<Teacher*> (pivot->data);
@@ -170,23 +171,23 @@ Node* cloneList(Node* list)
 		
 		if (isTeacher)
 		{
-			Teacher *teacher = new Teacher(*(pivot>data));
+			Teacher *teacher = new Teacher(*(isTeacher));
 			newElement = teacher;
 		}
 		if (isStudent)
 		{
-			Student *student = new Student(*(pivot>data));
+			Student *student = new Student(*(isStudent));
 			newElement = student;
 		}
 		if (isStaff)
 		{
-			Staff *staff = new Staff(*(pivot>data));
+			Staff *staff = new Staff(*(isStaff));
 			newElement = staff;
 		}
 
-		Node::add(newElement, newElement);
+		Node::add(newlist, newElement);
 
-		pivot = pivot>next;
+		pivot = pivot->next;
 	}
 
 	return newlist;

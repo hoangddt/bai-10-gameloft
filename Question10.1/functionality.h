@@ -3,6 +3,8 @@
 #include "Subject.h"
 #include "Student.h"
 #include "People.h"
+#include "Staff.h"
+#include "Teacher.h"
 #include "Node.h"
 #include "Student.h"
 #include <cstdarg>

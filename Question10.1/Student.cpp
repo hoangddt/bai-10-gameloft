@@ -8,6 +8,7 @@ Student::Student(const Student &otherStudent)
 {
 	setGrade(otherStudent.getGrade());
 	int numOfProject = otherStudent.getNumberOfProject();
+	mScores = NULL;
 	setNumberOfProject(numOfProject);
 	const float *scores = otherStudent.getSoreOfEachProject();
 	for (int i = 0; i < numOfProject; ++i)
