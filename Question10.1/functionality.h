@@ -10,6 +10,7 @@
 #include <cstdarg>
 #include <cstdio>
 #include <cstring>
+#include <string>
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -46,4 +47,12 @@ Node* cloneList(Node* list);
 // Write a list of student to file
 // provide list is contain linked-list of data
 // PATH is the path we want to output eg: "D:\\out.txt"
-void writeListToFile(Node *list, const char *PATH);
+void writeListStudentToFile(Node *list, const char *PATH);
+
+// Load student data from file
+// and add to list (append)
+void loadStudentFromFile(Node* &list, const char *PATH);
+
+// Try to read and printf all information to screen
+// for testing purpose
+void readStudentFile(const char *PATH);

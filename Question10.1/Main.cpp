@@ -78,7 +78,7 @@ int main(int argc, char const *argv[])
 	list;
 
 	char* PATH = "ouput.txt";
-	writeListToFile(list, PATH);
+	writeListStudentToFile(list, PATH);
 
 	// print student have score > 5.0
 	printf("--------Print Info Of Student have score > 5.0------\n");
@@ -89,10 +89,20 @@ int main(int argc, char const *argv[])
 	testPeopleCopyConstructor();
 
 	// Clone a list
-	printf("Calling cloneLIST\n");
+	printf("Calling cloneList\n");
 	Node *otherList = cloneList(list);
 	otherList;
+	
+	// printf("\n\n Read from file to screen\n\n");
+	// readStudentFile("ouput.txt");
 
+
+	printf("Prepare to load from file \n");
+	Node* studentList = NULL;
+	loadStudentFromFile(studentList, PATH);
+	
+	studentList;
+	printf("debug \n");
 
 /* this code snippet fail, look again later
 	// Add 5 staff to list

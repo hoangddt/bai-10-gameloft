@@ -201,7 +201,7 @@ Node* cloneList(Node* list)
 // Write a list to file
 // provide list is contain linked-list of data
 // PATH is the path we want to output eg: "D:\\out.txt"
-void writeListToFile(Node *list, const char *PATH)
+void writeListStudentToFile(Node *list, const char *PATH)
 {
 	ofstream myfile(PATH);
 	if (myfile.is_open())
@@ -228,9 +228,18 @@ void writeListToFile(Node *list, const char *PATH)
 				const float* scores = student->getSoreOfEachProject();
 				for (int i = 0; i < numberOfProj; ++i)
 				{
+					if (i == numberOfProj-1)
+					{
+						myfile<<scores[i];
+						continue;
+					}
 					myfile<<scores[i]<<" ";
 				}
-				myfile<<endl;
+				if (pivot->next != NULL)
+				{
+					myfile<<endl;
+				}
+				
 			}
 
 			// move forward in linked-list
@@ -242,4 +251,118 @@ void writeListToFile(Node *list, const char *PATH)
 	{
 		printf("Can not write to file: %s\n", PATH);
 	}
+}
+
+void loadStudentFromFile(Node* &list, const char *PATH)
+{
+	ifstream myfile(PATH);
+
+	if (myfile.is_open())
+  	{
+  		
+  		while (!myfile.eof())
+  		{
+  			
+			string strName;
+  			int IDCode,
+  				day,
+  				month,
+  				year,
+  				grade,
+  				numberOfProj;
+
+  			getline(myfile, strName);
+			const char *name = strName.c_str();
+			
+  			myfile>>IDCode;
+  			myfile>>day>>month>>year;
+  			myfile>>grade;
+  			myfile>>numberOfProj;
+
+  			float *scores = new float[numberOfProj];
+  			for (int i = 0; i < numberOfProj; ++i)
+  			{
+  				myfile>>scores[i];
+  			}
+  			char next;
+  			myfile.get(next);
+
+  			// Create a student object with given information
+  			Student *student = new Student(name);
+  			
+  			student->setName(name);
+  			student->setIDCode(IDCode);
+  			student->setBirthday(day, month, year);
+  			student->setGrade(grade);
+  			student->setNumberOfProject(numberOfProj);
+
+  			for (int i = 0; i < numberOfProj; ++i)
+			{
+				student->setSoreOfEachProject(i, scores[i]);
+			}
+			Node::add(list, student);
+			
+  		}
+    	myfile.close();
+	}
+	else
+		printf("Can not open file to read: %s\n", PATH);
+}
+
+
+void readStudentFile(const char *PATH)
+{
+	ifstream myfile(PATH);
+
+	if (myfile.is_open())
+  	{
+  		
+  		while (!myfile.eof())
+  		{
+  			//char name[50];
+			string strName;
+  			int IDCode,
+  				day,
+  				month,
+  				year,
+  				grade,
+  				numberOfProj;
+
+  			getline(myfile, strName);
+			const char *name = strName.c_str();
+			
+  			myfile>>IDCode;
+  			myfile>>day>>month>>year;
+  			myfile>>grade;
+  			myfile>>numberOfProj;
+
+  			float *scores = new float[numberOfProj];
+  			for (int i = 0; i < numberOfProj; ++i)
+  			{
+  				myfile>>scores[i];
+  			}
+  			char next;
+			myfile.get(next);
+			//getline(myfile, strName);
+  			
+			// print to screen
+			cout<<name<<endl;
+			cout<<IDCode<<endl;
+  			cout<<day<<" "<<month<<" "<<year<<endl;
+  			cout<<grade<<endl;
+  			cout<<numberOfProj<<endl;
+  			for (int i = 0; i < numberOfProj; ++i)
+  			{
+  				cout<<scores[i]<<" ";
+  			}
+  			cout<<endl;
+			printf("Continue reading?..\n");
+			int tempToRead;
+			cin>>tempToRead;
+			
+  		}
+    	myfile.close();
+	}
+	else
+		printf("Can not open file to read: %s\n", PATH);
 }
