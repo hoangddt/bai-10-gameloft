@@ -9,7 +9,7 @@
 
 int main(int argc, char const *argv[])
 {
-	// Create 5 staff, 5 teacher, and 5 student
+	// 10.2 - Create 5 staff, 5 teacher, and 5 student
 	int numberOfInstance = 5;
 
 
@@ -48,7 +48,7 @@ int main(int argc, char const *argv[])
 		printf("---------***--------\n\n");
 	}
 
-	// Create a list and add to list
+	// 10.2 - Create a list and add to list
 	Node *list = NULL;
 
 
@@ -69,49 +69,43 @@ int main(int argc, char const *argv[])
 	{
 		Node::add(list, students[i]);
 	}
-
-	for (int i = 0; i < 13; ++i)
-	{
-		// Node::remove(list);
-	}
 	
-	list;
-
-	char* PATH = "ouput.txt";
-	writeListStudentToFile(list, PATH);
-
-	// print student have score > 5.0
+	// 10.2- print student have score > 5.0
 	printf("--------Print Info Of Student have score > 5.0------\n");
 	int startFrom = 10;
 	printHighScoreStudent(list, startFrom, 5.0);
-
-	printf("Calling copy constructor\n");
-	testPeopleCopyConstructor();
-
-	// Clone a list
+	
+	// End 10.2 -----------------
+	
+	// 10.3 - clone a list
+	// Clone list to otherList
 	printf("Calling cloneList\n");
 	Node *otherList = cloneList(list);
 	otherList;
-	
+	// End 10.3 -----------------
+
+	// 10.4 - static method to remove element of node
+	// this method will remove last element
+	for (int i = 0; i < 13; ++i)
+	{
+		Node::remove(list);
+	}
+	list;
+	// End 10.4 ------------------
+
+	// 10.5 - Save a list of student to file
+	char* PATH = "ouput.txt";
+	writeListStudentToFile(list, PATH);
+
 	// printf("\n\n Read from file to screen\n\n");
 	// readStudentFile("ouput.txt");
 
-
+	// 10.5 - Load list student from existing file
 	printf("Prepare to load from file \n");
 	Node* studentList = NULL;
 	loadStudentFromFile(studentList, PATH);
-	
 	studentList;
-	printf("debug \n");
-
-/* this code snippet fail, look again later
-	// Add 5 staff to list
-	addInstanceToNode(list, staffs, numberOfInstance);
-	// Add 5 teacher to list
-	addInstanceToNode(list, teachers, numberOfInstance);
-	// Add 5 student to list
-	addInstanceToNode(list, students, numberOfInstance);
+	// End 10.5 - End question 10 ------------------
 	
-*/
 	return 0;
 }
