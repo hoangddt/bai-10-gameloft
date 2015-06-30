@@ -11,4 +11,7 @@ public:
 
 	// remove last element
 	static void remove(Node* &node);
+
+	// free all data of node
+	static void freeNode(Node* &node);
 };

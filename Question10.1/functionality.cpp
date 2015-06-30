@@ -198,6 +198,61 @@ Node* cloneList(Node* list)
 	return newlist;
 }
 
+
+// Sort list group by type: staff first, teacher next, and student last
+void sortList(Node* &list)
+{
+	Node* listStaff = NULL;
+	Node* listTeacher = NULL;
+	Node* listStudent = NULL;
+
+	Node *pivot = list;
+	Node *newlist = NULL;
+
+	while (pivot != NULL)
+	{
+		Teacher *isTeacher = dynamic_cast<Teacher*> (pivot->data);
+		Staff *isStaff = dynamic_cast<Staff*> (pivot->data);
+		Student *isStudent = dynamic_cast<Student*> (pivot->data);
+		
+		People *newElement;
+		
+		if (isTeacher)
+		{
+			// Because Teacher dirived from Staff, dynamic_cast will return true
+			// for both isStaff and isTeacher if it is Teacher
+			// So we disable isStaff to avoid copy by Staff constructor
+			isStaff = NULL;
+			// only use Teacher constructor
+			Teacher *teacher = new Teacher(*(isTeacher));
+			newElement = teacher;
+			Node::add(listTeacher, newElement);
+		}
+		if (isStudent)
+		{
+			Student *student = new Student(*(isStudent));
+			newElement = student;
+			Node::add(listStudent, newElement);
+		}
+		if (isStaff)
+		{
+			Staff *staff = new Staff(*(isStaff));
+			newElement = staff;
+			Node::add(listStaff, newElement);
+		}
+
+		pivot = pivot->next;
+	}
+	appendList(newlist, listStaff);
+	appendList(newlist, listTeacher);
+	appendList(newlist, listStudent);
+
+	Node::freeNode(list);
+	list = newlist;
+}
+
+
+
 // Write a list to file
 // provide list is contain linked-list of data
 // PATH is the path we want to output eg: "D:\\out.txt"
@@ -365,4 +420,28 @@ void readStudentFile(const char *PATH)
 	}
 	else
 		printf("Can not open file to read: %s\n", PATH);
+}
+
+// append source to des, whithout create new
+void appendList(Node* &des, Node* src)
+{
+
+
+	if (des == NULL)
+	{
+		des = src;
+		return;
+	}
+
+	// Go to last element of destincnation
+	Node* pivot = des;
+	Node* last;
+
+	while (pivot != NULL)
+	{
+		last = pivot;
+		pivot = pivot->next;
+	}
+
+	last->next = src;
 }

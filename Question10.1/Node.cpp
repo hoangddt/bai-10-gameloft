@@ -63,3 +63,14 @@ void Node::remove(Node* &node)
 	// remove last element
 	end->next = NULL;
 }
+
+// free all data of node
+void Node::freeNode(Node* &node)
+{
+	Node* pivot = node;
+	while (pivot != NULL)
+	{
+		delete pivot->data;
+		pivot = pivot->next;
+	}
+}

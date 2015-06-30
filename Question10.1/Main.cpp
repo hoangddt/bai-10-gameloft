@@ -57,19 +57,20 @@ int main(int argc, char const *argv[])
 	{
 		Node::add(list, staffs[i]);
 	}
-
+	// Add 5 student to list
+	for (int i = 0; i < numberOfInstance; ++i)
+	{
+		Node::add(list, students[i]);
+	}
 	// Add 5 teacher to list
 	for (int i = 0; i < numberOfInstance; ++i)
 	{
 		Node::add(list, teachers[i]);
 	}
 
-	// Add 5 student to list
-	for (int i = 0; i < numberOfInstance; ++i)
-	{
-		Node::add(list, students[i]);
-	}
-	
+	// Sort list group by type: staff first, teacher next, and student last
+	sortList(list);
+
 	// 10.2- print student have score > 5.0
 	printf("--------Print Info Of Student have score > 5.0------\n");
 	int startFrom = 10;
@@ -90,7 +91,6 @@ int main(int argc, char const *argv[])
 	{
 		Node::remove(list);
 	}
-	list;
 	// End 10.4 ------------------
 
 	// 10.5 - Save a list of student to file
@@ -107,5 +107,8 @@ int main(int argc, char const *argv[])
 	studentList;
 	// End 10.5 - End question 10 ------------------
 	
+	Node::freeNode(list);
+	Node::freeNode(otherList);
+	Node::freeNode(studentList);
 	return 0;
 }

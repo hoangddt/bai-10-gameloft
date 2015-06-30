@@ -44,6 +44,10 @@ void testPeopleCopyConstructor();
 // CLone current list, return list is created
 Node* cloneList(Node* list);
 
+// Sort list group by type: staff first, teacher next, and student last
+void sortList(Node* &list);
+
+
 // Write a list of student to file
 // provide list is contain linked-list of data
 // PATH is the path we want to output eg: "D:\\out.txt"
@@ -56,3 +60,6 @@ void loadStudentFromFile(Node* &list, const char *PATH);
 // Try to read and printf all information to screen
 // for testing purpose
 void readStudentFile(const char *PATH);
+
+// append source to des, whithout create new
+void appendList(Node* &des, Node* src);
