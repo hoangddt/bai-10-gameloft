@@ -95,7 +95,7 @@ int main(int argc, char const *argv[])
 
 	// 10.5 - Save a list of student to file
 	char* PATH = "ouput.txt";
-	writeListStudentToFile(list, PATH);
+	writeListStudentToFile(otherList, PATH);
 
 	// printf("\n\n Read from file to screen\n\n");
 	// readStudentFile("ouput.txt");
