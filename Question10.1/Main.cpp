@@ -1,5 +1,5 @@
 #include <cstdio>
-
+#include <vld.h>
 #include "People.h"
 #include "Staff.h"
 #include "Student.h"
@@ -69,7 +69,7 @@ int main(int argc, char const *argv[])
 	}
 
 	// Sort list group by type: staff first, teacher next, and student last
-	sortList(list);
+	// sortList(list);
 
 	// 10.2- print student have score > 5.0
 	printf("--------Print Info Of Student have score > 5.0------\n");

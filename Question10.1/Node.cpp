@@ -59,7 +59,7 @@ void Node::remove(Node* &node)
 		end = pivot;
 		pivot = pivot->next;
 	}
-
+	delete end->next;
 	// remove last element
 	end->next = NULL;
 }
@@ -68,9 +68,12 @@ void Node::remove(Node* &node)
 void Node::freeNode(Node* &node)
 {
 	Node* pivot = node;
+	Node* before = NULL;
 	while (pivot != NULL)
 	{
+		before = pivot;
 		delete pivot->data;
 		pivot = pivot->next;
+		delete before;
 	}
 }

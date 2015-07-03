@@ -356,6 +356,7 @@ void loadStudentFromFile(Node* &list, const char *PATH)
 				student->setSoreOfEachProject(i, scores[i]);
 			}
 			Node::add(list, student);
+			delete []scores;
 			
   		}
     	myfile.close();
